@@ -15,7 +15,7 @@ module.exports = {
   varDefaults:[
     (args, cons)=>{
       let ret = args[1] || 'services/default-service';
-      let Dpath = cons.service.defaultPath.split('/');
+      let Dpath = cons.s.defaultPath.split('/');
       return utils.lazyPrefix(ret, Dpath);
     },
     (args)=>(args[1].slice(1+args[1].lastIndexOf('/')))
