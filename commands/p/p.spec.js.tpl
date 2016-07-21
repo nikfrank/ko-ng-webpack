@@ -1,34 +1,23 @@
-'use strict';
+import p from './p';
+let mename = p.slice(p.lastIndexOf('.')+1).replace(/-([a-z])/g, m=>m[1].toUpperCase());
 
-describe('Component: DASH2CAMEL(NAME)', function () {
+// import mock services
+// import serviceMock from './services/serviceName/s.mock';
 
-  // load the directive's module and view
-  beforeEach(module('APP'));
-  beforeEach(module('PATH/NAME.html'));
-  beforeEach(module('ngMock'));
-
-  var component, $componentController, scope;
-
-  beforeEach(inject(function($rootScope, _$componentController_) {
-    scope = $rootScope.$new();
-    $componentController = _$componentController_;
-  }));
-
-
-
-
-  it('should make hidden element visible', inject(function ($compile) {
-    let component = $componentController('DASH2CAMEL(NAME)', {
-      // locals
-    }, {
-
-      // bindings 
-      bindExample: {
-        afterFormSubmit: jasmine.createSpy('formSubmit')
-      }
+describe(p, ()=>{
+  let ctrl;
+  
+  beforeEach(()=>{
+    angular.mock.module(p);
+    
+    angular.mock.inject($componentController=>{
+      ctrl = $componentController(mename, {
+//	service:serviceMock
+      });
     });
+  });
 
-    //    we can check also that the spy was run, if eg, a button was pressed
-    //    expect(element.text()).toBe('this is the tssCreateProjectPage component');
-  }));
+  it('should injected', ()=>{
+    expect(!!ctrl).toBe(true);
+  });
 });

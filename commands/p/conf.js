@@ -7,26 +7,21 @@ module.exports = {
   files:[
     'p.js.tpl',
     'p.spec.js.tpl',
+    'p.e2e.js.tpl',
     'p.html.tpl',
     'p.css.tpl',
     'name.js.tpl'
   ],
+  
   vars:[
     'PLACE',
-    'NAME',
-    'PATH'
+    'NAME'
   ],
-  varDefaults:[
-    (args, cons)=>{
-      let ret = args[1] || 'app';
-      let Dpath = cons.p.defaultPath.split('/');
-      return utils.lazyPrefix(ret, Dpath);
-    },
-    (args)=>(args[1].slice(1+args[1].lastIndexOf('/'))),
-    (args, cons)=>{
-      if(args[1].indexOf(cons.p.servedFrom) === 0)
-        return args[1].slice(cons.p.servedFrom.length);
-      else return args[1];
-    }
+
+  // argRewrites
+  varDefaults:[  
+    (args, cons)=> utils.lazyPrefix(args[1]|| 'app', cons.p.defaultPath.split('/')),
+    
+    args=> args[1].slice(1+args[1].lastIndexOf('/'))
   ]
 };
