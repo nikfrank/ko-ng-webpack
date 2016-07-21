@@ -1,12 +1,16 @@
-(function(angular) {
-'use strict';
+import angular from 'angular';
 
-class DASH2PASCAL(NAME){
-    constructor(){
-
-    }
+class Service{
+  constructor(){
+  }
 }
-DASH2PASCAL(NAME).$inject = [];
+Service.$inject = [];
 
-angular.module('APP').service('DASH2PASCAL(NAME)', DASH2PASCAL(NAME));
-})(angular);
+import name from './name';
+let mename = name.slice(name.lastIndexOf('.')+1).replace(/-([a-z])/g, m=>m[1].toUpperCase());
+
+// here import names from uncle services I depend on
+
+export default angular.module(name, [
+  // here list the uncle services
+]).service(mename, Service).name;

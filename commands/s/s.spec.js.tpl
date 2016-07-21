@@ -1,18 +1,16 @@
-'use strict';
+import s from './s.js';
+let mename = s.slice(s.lastIndexOf('.')+1).replace(/-([a-z])/g, m=>m[1].toUpperCase());
 
-describe('Service: DASH2PASCAL(NAME)', function () {
+describe(s, function () {
 
   // load the service's module
-  beforeEach(module('APP'));
+  beforeEach(()=> angular.mock.module(s));
 
   // instantiate service
-  var DASH2CAMEL(NAME);
-  beforeEach(inject(function (_DASH2PASCAL(NAME)_) {
-    DASH2CAMEL(NAME) = _DASH2PASCAL(NAME)_;
-  }));
+  var S;
+  beforeEach(()=> angular.mock.inject([mename, v=> (S = v)]));
 
-  it('should do something', function () {
-    expect(!!DASH2CAMEL(NAME)).toBe(true);
+  it('should injected', function () {
+    expect(!!S).toBe(true);
   });
-
 });
