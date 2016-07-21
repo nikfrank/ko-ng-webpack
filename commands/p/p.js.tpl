@@ -2,8 +2,7 @@ import angular from 'angular';
 import './p.css';
 
 class Ctrl {
-  constructor(Data, $q) {
-    console.log('...');
+  constructor() {
   }
 }
 Ctrl.$inject = [];
@@ -27,5 +26,7 @@ import name from './name';
 let mename = name.slice(name.lastIndexOf('.')+1).replace(/-([a-z])/g, m=>m[1].toUpperCase());
 
 export default angular.module(name, [
-  //childName, serviceName
+  //childName
+
+  //serviceName
 ]).component(mename, p).name;
