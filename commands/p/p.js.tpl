@@ -17,8 +17,7 @@ let p = {
 import pname from '../name';
 import name from './name';
 
-// import children
-//import childName from './child-p/p';
+// import children CHILDREN_IMPORT_HOOK
 
 // import sibling services
 //import serviceName from './services/service-name/s';
@@ -26,7 +25,8 @@ import name from './name';
 let mename = name.slice(name.lastIndexOf('.')+1).replace(/-([a-z])/g, m=>m[1].toUpperCase());
 
 export default angular.module(name, [
-  //childName
+  //childName CHILDREN_DEP_HOOK
 
   //serviceName
+  
 ]).component(mename, p).name;
