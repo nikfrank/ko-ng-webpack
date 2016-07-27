@@ -19,25 +19,26 @@ module.exports = {
   ],
 
   // argRewrites
-  varDefaults:[  
+  argRewrites:[  
     (args, cons)=> utils.lazyPrefix(args[1]|| 'app', cons.p.defaultPath.split('/')),
     
     args=> args[1].slice(1+args[1].lastIndexOf('/'))
   ],
 
-  seds:[
+  fileRewrites:[
     // need here a filepath, a regex, and a replace fn
     // need to take args and cons only.
     (args, cons)=> ({
       filepath:'../p.js',
       match: /CHILDREN_IMPORT_HOOK[\n]/,
-      replace: 'CHILDREN_IMPORT_HOOK\n'+'import '+args[2]+' from \'./'+args[2]+'/p\';\n'
+      replace: 'CHILDREN_IMPORT_HOOK\n'+
+               'import '+utils.dash2camel(args[2])+' from \'./'+args[2]+'/p\';\n'
     }),
 
     (args, cons)=> ({
       filepath:'../p.js',
       match: /CHILDREN_DEP_HOOK[\n]/,
-      replace: 'CHILDREN_DEP_HOOK\n  '+args[2]+','
+      replace: 'CHILDREN_DEP_HOOK\n  '+utils.dash2camel(args[2])+','
     })
   ]
 };
