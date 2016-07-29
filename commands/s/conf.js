@@ -14,7 +14,7 @@ module.exports = {
     'PLACE',
     'NAME'
   ],
-  varDefaults:[
+  argRewrites:[
     // if a name has anything other than \w or -, FUCK YOU!
     (args, cons)=> utils.lazyPrefix(args[1], cons.s.defaultPath.split('/'))
 			.replace(/\/([\w\-]+)$/, m=>'/services'+m),
