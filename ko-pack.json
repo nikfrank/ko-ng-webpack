@@ -1,5 +1,6 @@
 {
     "commands":{
+        "init-ng-webpack":{},
 	      "s":{
 	          "defaultParams":{
 		            

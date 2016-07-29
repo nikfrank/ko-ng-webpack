@@ -1,25 +1,27 @@
 {
-  "name": "ko-ng-webpack",
-  "version": "0.0.4",
-  "description": "ko package for angular 1.5 with webpack",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nikfrank/ko-ng-webpack.git"
-  },
-  "keywords": [
-    "ko",
-    "angular",
-    "webpack",
-    "generator"
-  ],
-  "author": "nik frank",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nikfrank/ko-ng-webpack/issues"
-  },
-  "homepage": "https://github.com/nikfrank/ko-ng-webpack#readme"
+    "name": "ko-ng-webpack",
+    "version": "0.0.5",
+    "description": "ko package for angular 1.5 with webpack",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nikfrank/ko-ng-webpack.git"
+    },
+    "keywords": [
+        "ko",
+        "angular",
+        "webpack",
+        "generator",
+        "es6",
+        "starter"
+    ],
+    "author": "nik frank",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nikfrank/ko-ng-webpack/issues"
+    },
+    "homepage": "https://github.com/nikfrank/ko-ng-webpack#readme"
 }

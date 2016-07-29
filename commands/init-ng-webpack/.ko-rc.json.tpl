@@ -1,8 +1,5 @@
 {
     "regexps":{},
-    "init":{
-        "APP":"NAME"
-    },
     "p":{
         "defaultPath":"src"
     },

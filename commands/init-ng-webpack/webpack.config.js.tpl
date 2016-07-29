@@ -128,7 +128,7 @@ module.exports = function makeWebpackConfig () {
   };
 
   // ISPARTA LOADER
-  // Reference: https://github.com/ColCh/isparta-instrumenter-loader
+  // Reference: https://github.com/deepsweet/isparta-loader
   // Instrument JS files with Isparta for subsequent code coverage reporting
   // Skips node_modules and files that end with .test.js
   if (isTest) {
@@ -138,7 +138,7 @@ module.exports = function makeWebpackConfig () {
         /node_modules/,
         /\.spec\.js$/
       ],
-      loader: 'isparta-instrumenter'
+      loader: 'isparta'
     })
   }
 
