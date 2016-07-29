@@ -58,7 +58,7 @@ module.exports = {
     (args, cons)=> ({
       filepath:'../../p.js',
       match:/Ctrl.\$inject = \[/,
-      replace:'Ctrl.$inject = [\''+args[2]+'\', '
+      replace:'Ctrl.$inject = [\''+utils.dash2camel(args[2])+'\', '
     })
   ]
 }

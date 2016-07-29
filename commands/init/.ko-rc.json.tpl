@@ -1,0 +1,12 @@
+{
+    "regexps":{},
+    "init":{
+        "APP":"NAME"
+    },
+    "p":{
+        "defaultPath":"src"
+    },
+    "s":{
+        "defaultPath":"src"
+    }
+}
